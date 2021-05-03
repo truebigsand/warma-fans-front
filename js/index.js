@@ -5,7 +5,7 @@ function MusicInit(){
     music_dlg.open();
 }
 function VideoInit(){
-    var videos = JSON.parse(ajax.get('http://154.8.203.168:5000/api/all', false))['data'];
+    var videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/all', false))['data'];
     UpdateVideo(videos);
 }
 function MagicButtonInit() {
