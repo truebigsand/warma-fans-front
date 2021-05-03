@@ -22,9 +22,9 @@ function UpdateVideo(videos){
 function SearchVideo(keyword){
     var videos;
     if(keyword==''){
-        videos = JSON.parse(ajax.get('http://154.8.203.168:5000/api/all', false))['data'];
+        videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/all', false))['data'];
     }else{
-        videos = JSON.parse(ajax.get('http://154.8.203.168:5000/api/search/title/' + keyword, false))['data'];
+        videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/search/title/' + keyword, false))['data'];
     }
     UpdateVideo(videos);
 }
