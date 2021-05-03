@@ -1,0 +1,5 @@
+class VideoDialog{
+    constructor(bvid){
+
+    }
+}
