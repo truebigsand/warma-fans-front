@@ -15,7 +15,7 @@ function UpdateVideo(videos){
     document.getElementById('data-table').innerHTML = '';
     for (let index in videos) {
         let tr = document.createElement('tr');
-        tr.innerHTML = '<td>' + videos[index]['aid'] + '</td>' + '<td>' + videos[index]['bvid'] + '</td>' + '<td>' + videos[index]['title'] + '</td>' + '<td><img style="max-height: 5em;" class="mdui-img-fluid mdui-img-rounded" src="' + videos[index]['pic'] + '"></td>';
+        tr.innerHTML = '<td>' + videos[index]['aid'] + '</td>' + '<td>' + videos[index]['bvid'] + '</td>' + '<td>' + videos[index]['title'] + '</td>' + '<td><a class="mdui-btn mdui-ripple" target="_blank" href="' + videos[index]['pic'] + '">点我</a></td>';//<button onclick="ToBlackMode();" id="magic_button" class="mdui-btn mdui-ripple mdui-color-red-400">要不点一下试试？（</button>
         document.getElementById('data-table').appendChild(tr);
     }
 }
