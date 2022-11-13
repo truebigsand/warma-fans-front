@@ -1,11 +1,12 @@
 var $ = mdui.$;
+const BASE_API_URL = "https://wa-api.truebigsand.top";
 
 function MusicInit(){
     window.music_dlg = new mdui.Dialog('<div id="magic-button-dialog" class="mdui-dialog"><div class="mdui-dialog-title">来一首Warmaの小曲儿（</div><div class="mdui-dialog-content"><iframe frameborder="no" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=479480785&auto=1&height=66"></iframe></div></div>');
     music_dlg.open();
 }
 function VideoInit(){
-    var videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/all', false))['data'];
+    var videos = JSON.parse(ajax.get(BASE_API_URL + '/all', false))['data'];
     UpdateVideo(videos);
 }
 function MagicButtonInit() {
@@ -22,9 +23,9 @@ function UpdateVideo(videos){
 function SearchVideo(keyword){
     var videos;
     if(keyword==''){
-        videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/all', false))['data'];
+        videos = JSON.parse(ajax.get(BASE_API_URL + '/all', false))['data'];
     }else{
-        videos = JSON.parse(ajax.get('https://warma-fans-back.vercel.app/search/title/' + keyword, false))['data'];
+        videos = JSON.parse(ajax.get(BASE_API_URL + '/search/title/' + keyword, false))['data'];
     }
     UpdateVideo(videos);
 }
